@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\kernel">
+      <UniqueIdentifier>{3f397a08-5736-4e7c-9d94-122273636161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs">
+      <UniqueIdentifier>{8b67df1e-9651-444d-b952-87c498be0258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\utils">
+      <UniqueIdentifier>{fb1b02b2-f8a5-4222-9476-24b15d14f83d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\utils\log_pipe">
+      <UniqueIdentifier>{d3d5309f-b1ae-497f-ad2a-003b295af201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs">
+      <UniqueIdentifier>{6600bea2-3f1c-4d96-b1c3-9fc4dfdea1d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\utils">
+      <UniqueIdentifier>{3e2f4d0e-c49c-48b6-8c42-7cdfcb3f2316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\utils\log_pipe">
+      <UniqueIdentifier>{0bff0f41-4f46-4c9b-bed6-c5627973ecd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\nlohmann">
+      <UniqueIdentifier>{bc73e0c7-6a2c-4383-aa39-7178081d1a2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\kernel">
+      <UniqueIdentifier>{1963707d-5b34-4aa4-9aab-8636ecb64814}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\sha1">
+      <UniqueIdentifier>{7ead3b97-7c8f-40da-b55e-b97cef10579a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\sha1">
+      <UniqueIdentifier>{422e14d4-a4e2-42cf-91d8-49e9c6177573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\backends">
+      <UniqueIdentifier>{aab528c8-668e-4c7c-8b91-61fbc454e0de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\backends\rtlil">
+      <UniqueIdentifier>{22f094ab-5cea-4597-8595-c404ab43cd55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\backends">
+      <UniqueIdentifier>{94c94b61-e820-4201-a456-cd8c9d078942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\backends\rtlil">
+      <UniqueIdentifier>{27cc6d2e-c539-4a57-b45d-a7fe541a7386}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="techlibs\xilinx\synth_xilinx.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\utils\log_pipe\common.cc">
+      <Filter>源文件\libs\utils\log_pipe</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\log.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\sha1\sha1.cpp">
+      <Filter>源文件\libs\sha1</Filter>
+    </ClCompile>
+    <ClCompile Include="backends\rtlil\rtlil_backend.cc">
+      <Filter>源文件\backends\rtlil</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="kernel\celltypes.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\log.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\register.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\rtlil.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\utils\log_pipe\common.h">
+      <Filter>头文件\libs\utils\log_pipe</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\hashlib.h">
+      <Filter>头文件\libs\utils\log_pipe</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\nlohmann\json.hpp">
+      <Filter>头文件\libs\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\nlohmann\json_fwd.hpp">
+      <Filter>头文件\libs\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\sha1\sha1.h">
+      <Filter>头文件\libs\sha1</Filter>
+    </ClInclude>
+    <ClInclude Include="backends\rtlil\rtlil_backend.h">
+      <Filter>头文件\backends\rtlil</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
