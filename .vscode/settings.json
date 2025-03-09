@@ -3,6 +3,7 @@
         "*.cjson": "jsonc",
         "*.wxss": "css",
         "*.wxs": "javascript",
+        "*.jsp": "html",
         "array": "cpp",
         "*.tcc": "cpp",
         "bitset": "cpp",
@@ -45,6 +46,20 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "any": "cpp",
+        "atomic": "cpp",
+        "chrono": "cpp",
+        "codecvt": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "map": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "optional": "cpp",
+        "ratio": "cpp",
+        "set": "cpp",
+        "string": "cpp",
+        "system_error": "cpp"
     }
 }

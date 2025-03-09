@@ -58,6 +58,30 @@
     <Filter Include="源文件\backends\rtlil">
       <UniqueIdentifier>{27cc6d2e-c539-4a57-b45d-a7fe541a7386}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\libs\json11">
+      <UniqueIdentifier>{5acb7cb8-d034-40a6-8c9f-9690ccac304d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\json11">
+      <UniqueIdentifier>{f8453482-2962-4ef2-be87-78f4f108c673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\ezsat">
+      <UniqueIdentifier>{aaadc7bc-7367-4465-8948-fa6694ba9d17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\ezsat">
+      <UniqueIdentifier>{be07f9f4-f9b3-4b3f-af61-136bfde05f5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\minisat">
+      <UniqueIdentifier>{5de5595e-8412-4a62-b939-fdc0b772fbc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\minisat">
+      <UniqueIdentifier>{35993347-c85c-4e03-816a-60cb9104c4d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\bigint">
+      <UniqueIdentifier>{1ffa7578-925d-419d-a4a6-0bc2f72ec9b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\bigint">
+      <UniqueIdentifier>{de29352b-92c3-4ba5-a911-a26b376a25a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="techlibs\xilinx\synth_xilinx.cc">
@@ -74,6 +98,84 @@
     </ClCompile>
     <ClCompile Include="backends\rtlil\rtlil_backend.cc">
       <Filter>源文件\backends\rtlil</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\yosys.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\json11\json11.cpp">
+      <Filter>源文件\libs\json11</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\register.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\satgen.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ezsat\ezminisat.cc">
+      <Filter>源文件\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ezsat\demo_bit.cc">
+      <Filter>源文件\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ezsat\demo_cmp.cc">
+      <Filter>源文件\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ezsat\demo_vec.cc">
+      <Filter>源文件\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ezsat\ezsat.cc">
+      <Filter>源文件\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ezsat\puzzle3d.cc">
+      <Filter>源文件\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ezsat\testbench.cc">
+      <Filter>源文件\libs\ezsat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\minisat\Options.cc">
+      <Filter>源文件\libs\minisat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\minisat\SimpSolver.cc">
+      <Filter>源文件\libs\minisat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\minisat\Solver.cc">
+      <Filter>源文件\libs\minisat</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\minisat\System.cc">
+      <Filter>源文件\libs\minisat</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\ff.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\rtlil.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\binding.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\fmt.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\bigint\BigInteger.cc">
+      <Filter>源文件\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\bigint\BigIntegerAlgorithms.cc">
+      <Filter>源文件\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\bigint\BigIntegerUtils.cc">
+      <Filter>源文件\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\bigint\BigUnsigned.cc">
+      <Filter>源文件\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\bigint\BigUnsignedInABase.cc">
+      <Filter>源文件\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\bigint\sample.cc">
+      <Filter>源文件\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\bigint\testsuite.cc">
+      <Filter>源文件\libs\bigint</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +208,114 @@
     </ClInclude>
     <ClInclude Include="backends\rtlil\rtlil_backend.h">
       <Filter>头文件\backends\rtlil</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\yosys.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\json11\json11.hpp">
+      <Filter>头文件\libs\json11</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\satgen.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\sigtools.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\macc.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\ezsat\ezminisat.h">
+      <Filter>头文件\libs\ezsat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\ezsat\ezsat.h">
+      <Filter>头文件\libs\ezsat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Alg.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Alloc.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Dimacs.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Heap.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\IntMap.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\IntTypes.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Map.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Options.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\ParseUtils.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Queue.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Rnd.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\SimpSolver.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Solver.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\SolverTypes.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Sort.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\System.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\Vec.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\minisat\XAlloc.h">
+      <Filter>头文件\libs\minisat</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\ff.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\ffinit.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\binding.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\fmt.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\bigint\BigInteger.hh">
+      <Filter>头文件\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\bigint\BigIntegerAlgorithms.hh">
+      <Filter>头文件\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\bigint\BigIntegerLibrary.hh">
+      <Filter>头文件\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\bigint\BigIntegerUtils.hh">
+      <Filter>头文件\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\bigint\BigUnsigned.hh">
+      <Filter>头文件\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\bigint\BigUnsignedInABase.hh">
+      <Filter>头文件\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\bigint\NumberlikeArray.hh">
+      <Filter>头文件\libs\bigint</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

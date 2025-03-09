@@ -414,153 +414,8 @@ static void logv_warning_with_prefix(const char *prefix,
 	}
 }
 
-static void logv_info_with_prefix(const char *prefix,
-                                     const char *format, LogData& logdata ,va_list ap)
-{
-	std::string message = vstringf(format, ap);
-	// 调试，判断传入的结构体是否和实际的日志级别一致
-	/*if(logdata.level_code != static_cast<int>(LevelCode::INFO_LOG)){
-		log_error("Info::日志打印类型与结构体不一致");
-	}*/
-	message = logdata.category + " " + message;
-	// log文件中输出日志格式
-	nlohmann::json data;
-    data["pipe_type"] = logdata.pipe_type;
-    data["level_code"] = logdata.level_code;
-	data["message_content"] = message;
-	data["phase"] = logdata.phase;
-    data["sub_phase"] = logdata.sub_phase;
-    data["category"] = logdata.category;
-    data["task_info"] = logdata.task_info;
-	Common::ConnectAndSendJson(PipeType::LOG, data);
-	bool suppressed = false;
-
-	for (auto &re : log_nowarn_regexes)
-		if (std::regex_search(message, re))
-			suppressed = true;
-
-	if (suppressed)
-	{
-		log("Suppressed %s%s", prefix, message.c_str());
-	}
-	else
-	{
-		int bak_log_make_debug = log_make_debug;
-		log_make_debug = 0;
-
-		for (auto &re : log_werror_regexes)
-			if (std::regex_search(message, re))
-				log_error("%s",  message.c_str());
-
-		bool warning_match = false;
-		for (auto &item : log_expect_warning)
-			if (std::regex_search(message, item.second.pattern)) {
-				item.second.current_count++;
-				warning_match = true;
-			}
-
-		if (log_warnings.count(message))
-		{
-			log2("%s%s", false,prefix, message.c_str());
-			log_flush();
-		}
-		else
-		{
-			if (log_errfile != NULL && !log_quiet_warnings)
-				log_files.push_back(log_errfile);
-
-			log2("%s%s",false, prefix, message.c_str());
-			log_flush();
-
-			if (log_errfile != NULL && !log_quiet_warnings)
-				log_files.pop_back();
-
-			log_warnings.insert(message);
-		}
-
-		if (!warning_match)
-			log_warnings_count_noexpect++;
-		log_warnings_count++;
-		log_make_debug = bak_log_make_debug;
-	}
-}
 
 
-static void logv_warning_with_prefix(const char *prefix,
-                                     const char *format, LogData& logdata ,va_list ap)
-{
-	// 调试，判断传入的结构体是否和实际的日志级别一致
-	/*if(logdata.level_code != static_cast<int>(LevelCode::WARNING_LOG)){
-		log_error("Warning::日志打印类型与结构体不一致");
-	}*/
-	std::string message = vstringf(format, ap);
-	message = logdata.category + " " + message;
-	// log文件中输出日志格式
-	nlohmann::json data;
-    data["pipe_type"] = logdata.pipe_type;
-    data["level_code"] = logdata.level_code;
-	data["message_content"] = message;
-	data["phase"] = logdata.phase;
-    data["sub_phase"] = logdata.sub_phase;
-    data["category"] = logdata.category;
-    data["task_info"] = logdata.task_info;
-	Common::ConnectAndSendJson(PipeType::LOG, data);
-	bool suppressed = false;
-
-	for (auto &re : log_nowarn_regexes)
-		if (std::regex_search(message, re))
-			suppressed = true;
-
-	if (suppressed)
-	{
-		log("Suppressed %s%s", prefix, message.c_str());
-	}
-	else
-	{
-		int bak_log_make_debug = log_make_debug;
-		log_make_debug = 0;
-
-		for (auto &re : log_werror_regexes)
-			if (std::regex_search(message, re))
-				log_error("%s",  message.c_str());
-
-		bool warning_match = false;
-		for (auto &item : log_expect_warning)
-			if (std::regex_search(message, item.second.pattern)) {
-				item.second.current_count++;
-				warning_match = true;
-			}
-
-		if (log_warnings.count(message))
-		{
-			log2("%s%s", false,prefix, message.c_str());
-			log_flush();
-		}
-		else
-		{
-			if (log_errfile != NULL && !log_quiet_warnings)
-				log_files.push_back(log_errfile);
-
-			log2("%s%s",false, prefix, message.c_str());
-			log_flush();
-
-			if (log_errfile != NULL && !log_quiet_warnings)
-				log_files.pop_back();
-
-			log_warnings.insert(message);
-		}
-
-		if (!warning_match)
-			log_warnings_count_noexpect++;
-		log_warnings_count++;
-		log_make_debug = bak_log_make_debug;
-	}
-}
-
-void logv_warning(const char *format, LogData& logdata ,va_list ap)
-{
-	logv_warning_with_prefix("Warning: ", format, logdata, ap);
-}
 
 void logv_warning(const char *format, va_list ap)
 {
@@ -576,7 +431,7 @@ void log_file_warning(const std::string &filename, int lineno,
                       const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	std::string prefix = stringf("%s:%d: Warning: ",
 			filename.c_str(), lineno);
 	logv_warning_with_prefix(prefix.c_str(), format, ap);
@@ -587,81 +442,13 @@ void log_file_info(const std::string &filename, int lineno,
                       const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	std::string fmt = stringf("%s:%d: Info: %s",
 			filename.c_str(), lineno, format);
 	logv(fmt.c_str(), ap);
 	va_end(ap);
 }
 
-static void logv_error_with_prefix(const char *prefix,const char *format,
-								LogData& logdata, va_list ap)
-{
-#ifdef EMSCRIPTEN
-	auto backup_log_files = log_files;
-#endif
-	int bak_log_make_debug = log_make_debug;
-	log_make_debug = 0;
-	log_suppressed();
-	if (log_errfile != NULL)
-		log_files.push_back(log_errfile);
-
-	if (log_error_stderr)
-		for (auto &f : log_files)
-			if (f == stdout)
-				f = stderr;
-
-	// 调试，判断传入的结构体是否和实际的日志级别一致
-	/*if(logdata.level_code != static_cast<int>(LevelCode::ERROR_LOG)){
-		log_error("Error::日志打印类型与结构体不一致");
-	}*/
-
-	log_last_error = vstringf(format, ap);
-	log_last_error = logdata.category + " " + log_last_error;
-
-	// 返回 error log
-	nlohmann::json log_data = Common::CreateLogJson(LevelCode::ERROR_LOG,log_last_error,"verilog parser");
-	Common::ConnectAndSendJson(PipeType::LOG, log_data);
-
-	// 返回报错信息
-	nlohmann::json data_info;
-    data_info["pipe_type"] = PipeTypeToString(PipeType::DATA);
-    data_info["level_code"] = logdata.level_code;
-	data_info["message_content"] = log_last_error;
-	data_info["phase"] = logdata.phase;
-    data_info["sub_phase"] = logdata.sub_phase;
-    data_info["category"] = logdata.category;
-    data_info["task_info"] = logdata.task_info;
-	nlohmann::json data = Common::CreateDataJson(StatusCode::INTERNAL_SERVER_ERROR,data_info,logdata.task_info);
-	Common::ConnectAndSendJson(PipeType::DATA, data);
-	log2("%s%s",false, prefix, log_last_error.c_str());
-	log_flush();
-
-	log_make_debug = bak_log_make_debug;
-
-	for (auto &item : log_expect_error)
-		if (std::regex_search(log_last_error, item.second.pattern))
-			item.second.current_count++;
-
-	log_check_expected();
-
-	if (log_error_atexit)
-		log_error_atexit();
-
-	YS_DEBUGTRAP_IF_DEBUGGING;
-	const char *e = getenv("YOSYS_ABORT_ON_LOG_ERROR");
-	if (e && atoi(e))
-		abort();
-
-#ifdef EMSCRIPTEN
-	log_files = backup_log_files;
-	throw 0;
-#elif defined(_MSC_VER)
-	_exit(1);
-#else
-	_Exit(1);
-#endif
-}
 
 [[noreturn]]
 static void logv_error_with_prefix(const char *prefix,
@@ -717,10 +504,6 @@ void logv_error(const char *format, va_list ap)
 	logv_error_with_prefix("ERROR: ", format, ap);
 }
 
-void logv_error(const char *format, LogData& logdata, va_list ap)
-{
-	logv_error_with_prefix("ERROR: ", format, logdata, ap);
-}
 
 void logv_file_error(const string &filename, int lineno,
                      const char *format, va_list ap)
@@ -730,43 +513,27 @@ void logv_file_error(const string &filename, int lineno,
 	logv_error_with_prefix(prefix.c_str(), format, ap);
 }
 
-// 相较于原版的logv_file_error 新增了 LogData& logdata，用于进程通信
-void logv_file_error(const string &filename, int lineno,
-                     const char *format, LogData &logdata, va_list ap) {
-	std::string prefix = stringf("%s:%d: ERROR: ",
-				     filename.c_str(), lineno);
-	logv_error_with_prefix(prefix.c_str(), format, logdata, ap);
-}
 
 void log_file_error(const string &filename, int lineno,
                     const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	logv_file_error(filename, lineno, format, ap);
 }
 
-// 相较于原版的log_file_error 新增了 LogData& logdata，用于进程通信
-void log_file_error(const std::string &filename, int lineno,
-                    LogData &logdata,
-                    const char *format, ...) {
-    va_list ap;
-    // va_start(ap, format);
-    logv_file_error(filename, lineno, format, logdata, ap);
-    va_end(ap);
-}
 
 void log(const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	logv(format, ap);
 	va_end(ap);
 }
 
 void log2(const char *format, bool is_send, ...) {
     va_list ap;
-    // va_start(ap, is_send);
+    va_start(ap, is_send);
     logv2(format, is_send, ap);
     va_end(ap);
 }
@@ -774,44 +541,24 @@ void log2(const char *format, bool is_send, ...) {
 void log_header(RTLIL::Design *design, const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	logv_header(design, format, ap);
 	va_end(ap);
 }
 
-void log_info(const char *format, LogData& logdata , ...)
-{
-	va_list ap;
-	// va_start(ap, logdata);
-	logv_info(format, logdata, ap);
-	va_end(ap);
-}
-
-void logv_info(const char *format, LogData& logdata ,va_list ap)
-{
-	logv_info_with_prefix("Info: ", format, logdata, ap);
-}
 
 void log_warning(const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	logv_warning(format, ap);
-	va_end(ap);
-}
-
-void log_warning(const char *format, LogData& logdata, ...)
-{
-	va_list ap;
-	// va_start(ap, logdata);
-	logv_warning(format, logdata, ap);
 	va_end(ap);
 }
 
 void log_experimental(const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	string s = vstringf(format, ap);
 	va_end(ap);
 
@@ -824,7 +571,7 @@ void log_experimental(const char *format, ...)
 void log_warning_noprefix(const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	logv_warning_noprefix(format, ap);
 	va_end(ap);
 }
@@ -832,23 +579,14 @@ void log_warning_noprefix(const char *format, ...)
 void log_error(const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 	logv_error(format, ap);
 	va_end(ap);
 }
-
-void log_error(const char *format, LogData& logdata, ...)
-{
-	va_list ap;
-	// va_start(ap, logdata);
-	logv_error(format, logdata, ap);
-	va_end(ap);
-}
-
 void log_cmd_error(const char *format, ...)
 {
 	va_list ap;
-	// va_start(ap, format);
+	va_start(ap, format);
 
 	if (log_cmd_error_throw) {
 		log_last_error = vstringf(format, ap);
