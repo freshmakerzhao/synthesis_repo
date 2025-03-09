@@ -419,9 +419,9 @@ static void logv_info_with_prefix(const char *prefix,
 {
 	std::string message = vstringf(format, ap);
 	// 调试，判断传入的结构体是否和实际的日志级别一致
-	if(logdata.level_code != static_cast<int>(LevelCode::INFO_LOG)){
+	/*if(logdata.level_code != static_cast<int>(LevelCode::INFO_LOG)){
 		log_error("Info::日志打印类型与结构体不一致");
-	}
+	}*/
 	message = logdata.category + " " + message;
 	// log文件中输出日志格式
 	nlohmann::json data;
@@ -490,9 +490,9 @@ static void logv_warning_with_prefix(const char *prefix,
                                      const char *format, LogData& logdata ,va_list ap)
 {
 	// 调试，判断传入的结构体是否和实际的日志级别一致
-	if(logdata.level_code != static_cast<int>(LevelCode::WARNING_LOG)){
+	/*if(logdata.level_code != static_cast<int>(LevelCode::WARNING_LOG)){
 		log_error("Warning::日志打印类型与结构体不一致");
-	}
+	}*/
 	std::string message = vstringf(format, ap);
 	message = logdata.category + " " + message;
 	// log文件中输出日志格式
@@ -576,7 +576,7 @@ void log_file_warning(const std::string &filename, int lineno,
                       const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	std::string prefix = stringf("%s:%d: Warning: ",
 			filename.c_str(), lineno);
 	logv_warning_with_prefix(prefix.c_str(), format, ap);
@@ -587,7 +587,7 @@ void log_file_info(const std::string &filename, int lineno,
                       const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	std::string fmt = stringf("%s:%d: Info: %s",
 			filename.c_str(), lineno, format);
 	logv(fmt.c_str(), ap);
@@ -612,9 +612,9 @@ static void logv_error_with_prefix(const char *prefix,const char *format,
 				f = stderr;
 
 	// 调试，判断传入的结构体是否和实际的日志级别一致
-	if(logdata.level_code != static_cast<int>(LevelCode::ERROR_LOG)){
+	/*if(logdata.level_code != static_cast<int>(LevelCode::ERROR_LOG)){
 		log_error("Error::日志打印类型与结构体不一致");
-	}
+	}*/
 
 	log_last_error = vstringf(format, ap);
 	log_last_error = logdata.category + " " + log_last_error;
@@ -742,7 +742,7 @@ void log_file_error(const string &filename, int lineno,
                     const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	logv_file_error(filename, lineno, format, ap);
 }
 
@@ -751,7 +751,7 @@ void log_file_error(const std::string &filename, int lineno,
                     LogData &logdata,
                     const char *format, ...) {
     va_list ap;
-    va_start(ap, format);
+    // va_start(ap, format);
     logv_file_error(filename, lineno, format, logdata, ap);
     va_end(ap);
 }
@@ -759,14 +759,14 @@ void log_file_error(const std::string &filename, int lineno,
 void log(const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	logv(format, ap);
 	va_end(ap);
 }
 
 void log2(const char *format, bool is_send, ...) {
     va_list ap;
-    va_start(ap, is_send);
+    // va_start(ap, is_send);
     logv2(format, is_send, ap);
     va_end(ap);
 }
@@ -774,7 +774,7 @@ void log2(const char *format, bool is_send, ...) {
 void log_header(RTLIL::Design *design, const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	logv_header(design, format, ap);
 	va_end(ap);
 }
@@ -782,7 +782,7 @@ void log_header(RTLIL::Design *design, const char *format, ...)
 void log_info(const char *format, LogData& logdata , ...)
 {
 	va_list ap;
-	va_start(ap, logdata);
+	// va_start(ap, logdata);
 	logv_info(format, logdata, ap);
 	va_end(ap);
 }
@@ -795,7 +795,7 @@ void logv_info(const char *format, LogData& logdata ,va_list ap)
 void log_warning(const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	logv_warning(format, ap);
 	va_end(ap);
 }
@@ -803,7 +803,7 @@ void log_warning(const char *format, ...)
 void log_warning(const char *format, LogData& logdata, ...)
 {
 	va_list ap;
-	va_start(ap, logdata);
+	// va_start(ap, logdata);
 	logv_warning(format, logdata, ap);
 	va_end(ap);
 }
@@ -811,7 +811,7 @@ void log_warning(const char *format, LogData& logdata, ...)
 void log_experimental(const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	string s = vstringf(format, ap);
 	va_end(ap);
 
@@ -824,7 +824,7 @@ void log_experimental(const char *format, ...)
 void log_warning_noprefix(const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	logv_warning_noprefix(format, ap);
 	va_end(ap);
 }
@@ -832,7 +832,7 @@ void log_warning_noprefix(const char *format, ...)
 void log_error(const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 	logv_error(format, ap);
 	va_end(ap);
 }
@@ -840,7 +840,7 @@ void log_error(const char *format, ...)
 void log_error(const char *format, LogData& logdata, ...)
 {
 	va_list ap;
-	va_start(ap, logdata);
+	// va_start(ap, logdata);
 	logv_error(format, logdata, ap);
 	va_end(ap);
 }
@@ -848,7 +848,7 @@ void log_error(const char *format, LogData& logdata, ...)
 void log_cmd_error(const char *format, ...)
 {
 	va_list ap;
-	va_start(ap, format);
+	// va_start(ap, format);
 
 	if (log_cmd_error_throw) {
 		log_last_error = vstringf(format, ap);

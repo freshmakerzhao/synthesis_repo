@@ -539,7 +539,9 @@ struct DumpPass : public Pass {
 			ff->open(filename.c_str(), append ? std::ofstream::app : std::ofstream::trunc);
 			if (ff->fail()) {
 				delete ff;
-				log_error("Can't open file `%s' for writing: %s\n", filename.c_str(), strerror(errno));
+				char errbuf[256]; // 分配足够大小的缓冲区
+				strerror_s(errbuf, sizeof(errbuf), errno);
+				log_error("Can't open file `%s' for writing: %s\n", filename.c_str(), errbuf);
 			}
 			f = ff;
 		} else {

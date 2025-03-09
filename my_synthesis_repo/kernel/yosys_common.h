@@ -283,14 +283,14 @@ std::string stringf(const char *fmt, ...) YS_ATTRIBUTE(format(printf, 1, 2));
 
 inline std::string stringf(const char *fmt, ...)
 {
-	std::string string;
-	va_list ap;
+	 std::string string;
+	// va_list ap;
 
-	va_start(ap, fmt);
-	string = vstringf(fmt, ap);
-	va_end(ap);
+	// va_start(ap, fmt);
+	// string = vstringf(fmt, ap);
+	// va_end(ap);
 
-	return string;
+	 return string;
 }
 
 int readsome(std::istream &f, char *s, int n);
