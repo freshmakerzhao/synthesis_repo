@@ -82,6 +82,69 @@
     <Filter Include="源文件\libs\bigint">
       <UniqueIdentifier>{de29352b-92c3-4ba5-a911-a26b376a25a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\frontends">
+      <UniqueIdentifier>{076dfef0-3497-42ea-8dbe-21a740202963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\frontends">
+      <UniqueIdentifier>{7aa05bc7-83f4-4884-b15a-c180f46cf801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frontends\ast">
+      <UniqueIdentifier>{32307696-67ad-4494-a147-b98684970317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\frontends\ast">
+      <UniqueIdentifier>{c727dfe8-619f-4270-b096-9c7c7eade151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frontends\aiger">
+      <UniqueIdentifier>{3320c38a-6ea9-47d2-9226-829abbc4951f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\frontends\aiger">
+      <UniqueIdentifier>{abbfc2d9-6570-4edb-a961-a381c913e114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frontends\blif">
+      <UniqueIdentifier>{9ca63d48-9fbe-4218-a22c-3fe4b723a0c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\frontends\blif">
+      <UniqueIdentifier>{50c8b865-e533-45a6-9698-a27668a103e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frontends\json">
+      <UniqueIdentifier>{dc0a529c-eae3-4492-88e4-b7a9dd393aff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frontends\liberty">
+      <UniqueIdentifier>{530f8189-79ec-42d5-8363-ce5bc57b2df8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frontends\rpc">
+      <UniqueIdentifier>{2632d47d-ac91-4025-bdd6-93b1b32edb78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frontends\rtlil">
+      <UniqueIdentifier>{ebc05b13-0a04-41cd-a78f-92ba0a0f9170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\frontends\rtlil">
+      <UniqueIdentifier>{29999a06-b902-418a-8be7-49e9f1974bbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frontends\verilog">
+      <UniqueIdentifier>{3906f981-b6c4-408a-b474-cad6949e0bfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\frontends\verilog">
+      <UniqueIdentifier>{8e17fff6-2b8d-4296-9431-0b723379eedb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\passes">
+      <UniqueIdentifier>{dd97054d-58ec-4ab3-a415-23bfbcd945bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\passes\techmap">
+      <UniqueIdentifier>{47c58638-6175-4eab-a1b8-652cfe8f4c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\passes">
+      <UniqueIdentifier>{39016a7d-71df-4719-bd2f-6d106f3d311f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\passes\techmap">
+      <UniqueIdentifier>{85bf657b-9f5a-46b1-8869-dd875cb6f1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\subcircuit">
+      <UniqueIdentifier>{ad1843a0-896e-42a9-a484-9a3acccc5af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\subcircuit">
+      <UniqueIdentifier>{e8216909-1201-4e57-9644-064fa3de66b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="techlibs\xilinx\synth_xilinx.cc">
@@ -176,6 +239,180 @@
     </ClCompile>
     <ClCompile Include="libs\bigint\testsuite.cc">
       <Filter>源文件\libs\bigint</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\ast\ast.cc">
+      <Filter>源文件\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\ast\ast_binding.cc">
+      <Filter>源文件\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\ast\dpicall.cc">
+      <Filter>源文件\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\ast\genrtlil.cc">
+      <Filter>源文件\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\ast\simplify.cc">
+      <Filter>源文件\frontends\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\aiger\aigerparse.cc">
+      <Filter>源文件\frontends\aiger</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\blif\blifparse.cc">
+      <Filter>源文件\frontends\blif</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\json\jsonparse.cc">
+      <Filter>源文件\frontends\json</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\liberty\liberty.cc">
+      <Filter>源文件\frontends\liberty</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\rpc\rpc_frontend.cc">
+      <Filter>源文件\frontends\rpc</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\rtlil\rtlil_frontend.cc">
+      <Filter>源文件\frontends\rtlil</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\verilog\const2ast.cc">
+      <Filter>源文件\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\verilog\verilog_frontend.cc">
+      <Filter>源文件\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\abc.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\abc9.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\abc9_exe.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\abc9_ops.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\aigmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\alumacc.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\attrmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\attrmvcp.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\bmuxmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\booth.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\bwmuxmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\cellmatch.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\clkbufmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\deminout.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\demuxmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\dffinit.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\dfflegalize.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\dfflibmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\dffunmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\extract.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\extract_counter.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\extract_fa.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\extract_reduce.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\extractinv.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\filterlib.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\flatten.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\flowmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\hilomap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\insbuf.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\iopadmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\libparse.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\lut2mux.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\maccmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\muxcover.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\nlutmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\pmuxtree.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\shregmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\simplemap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\techmap.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\tribuf.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\techmap\zinit.cc">
+      <Filter>源文件\passes\techmap</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\cellaigs.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\subcircuit\demo.cc">
+      <Filter>源文件\libs\subcircuit</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\subcircuit\scshell.cc">
+      <Filter>源文件\libs\subcircuit</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\subcircuit\subcircuit.cc">
+      <Filter>源文件\libs\subcircuit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +553,54 @@
     </ClInclude>
     <ClInclude Include="libs\bigint\NumberlikeArray.hh">
       <Filter>头文件\libs\bigint</Filter>
+    </ClInclude>
+    <ClInclude Include="frontends\ast\ast.h">
+      <Filter>头文件\frontends\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="frontends\ast\ast_binding.h">
+      <Filter>头文件\frontends\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\utils.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="frontends\aiger\aigerparse.h">
+      <Filter>头文件\frontends\aiger</Filter>
+    </ClInclude>
+    <ClInclude Include="frontends\blif\blifparse.h">
+      <Filter>头文件\frontends\blif</Filter>
+    </ClInclude>
+    <ClInclude Include="frontends\rtlil\rtlil_frontend.h">
+      <Filter>头文件\frontends\rtlil</Filter>
+    </ClInclude>
+    <ClInclude Include="frontends\verilog\preproc.h">
+      <Filter>头文件\frontends\verilog</Filter>
+    </ClInclude>
+    <ClInclude Include="frontends\verilog\verilog_frontend.h">
+      <Filter>头文件\frontends\verilog</Filter>
+    </ClInclude>
+    <ClInclude Include="passes\techmap\libparse.h">
+      <Filter>头文件\passes\techmap</Filter>
+    </ClInclude>
+    <ClInclude Include="passes\techmap\simplemap.h">
+      <Filter>头文件\passes\techmap</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\cellaigs.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\consteval.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\cost.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\modtools.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\timinginfo.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\subcircuit\subcircuit.h">
+      <Filter>头文件\libs\subcircuit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
