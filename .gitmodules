@@ -1,0 +1,3 @@
+[submodule "my_synthesis_repo/abc"]
+	path = my_synthesis_repo/abc
+	url = git@github.com:freshmakerzhao/abc.git
