@@ -145,11 +145,35 @@
     <Filter Include="头文件\libs\subcircuit">
       <UniqueIdentifier>{e8216909-1201-4e57-9644-064fa3de66b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\libs\fst">
+      <UniqueIdentifier>{26b9919d-cf06-407e-a060-0ff739337d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\zlib">
+      <UniqueIdentifier>{af441fe1-bad8-422b-bfe3-646e5cffcd09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\passes\cmds">
+      <UniqueIdentifier>{9289e037-0bf1-4964-b222-85ea85c719ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\zlib">
+      <UniqueIdentifier>{6e6cead2-d62c-4b46-a30e-973a0b5dc78f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\fst">
+      <UniqueIdentifier>{9f6d3373-1589-44ad-8c6d-14e8d1eb82da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\techlibs">
+      <UniqueIdentifier>{c19ca355-2510-4587-8455-83aaeda43bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\techlibs\xilinx">
+      <UniqueIdentifier>{6a87567b-41e0-4820-9aa1-71b52204608b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\libs\dlfcn-win32">
+      <UniqueIdentifier>{feb4b046-450d-4008-909e-3522f14e82a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\libs\dlfcn-win32">
+      <UniqueIdentifier>{f642739f-4bab-4e89-868a-1e8cfbb5394b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="techlibs\xilinx\synth_xilinx.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="libs\utils\log_pipe\common.cc">
       <Filter>源文件\libs\utils\log_pipe</Filter>
     </ClCompile>
@@ -414,6 +438,249 @@
     <ClCompile Include="libs\subcircuit\subcircuit.cc">
       <Filter>源文件\libs\subcircuit</Filter>
     </ClCompile>
+    <ClCompile Include="passes\cmds\add.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\adler32.c">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\autoname.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\blackbox.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\box_derive.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\bugpoint.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\calc.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\celledges.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\check.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\clean_zerowidth.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\chformal.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\chtype.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\compress_.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\cover.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\copy.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\connwrappers.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\connect.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\deflate.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\crc32.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\dft_tag.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\design.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\delete.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\driver.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\exec.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\edgetypes.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\fst\fastlz.cc">
+      <Filter>源文件\libs\fst</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\fst\fstapi.cc">
+      <Filter>源文件\libs\fst</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\ffmerge.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\fstdata.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\future.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\glift.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\inftrees.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\gzclose.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\gzlib.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\gzread.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\gzwrite.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\infback.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\inffast.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\inflate.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\json.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\ltp.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\logger.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\logcmd.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\fst\lz4.cc">
+      <Filter>源文件\libs\fst</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\mem.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\portlist.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\plugin.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\verilog\preproc.cc">
+      <Filter>源文件\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\printattrs.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\qcsat.cc">
+      <Filter>头文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\rename.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\qwp.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\rtlil\rtlil_lexer.cc">
+      <Filter>源文件\frontends\rtlil</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\rtlil\rtlil_parser.tab.cc">
+      <Filter>源文件\frontends\rtlil</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\scatter.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\scc.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\scopeinfo.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\scratchpad.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\stat.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\select.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\setattr.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\setundef.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\show.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\splice.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\splitcells.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\splitnets.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\sta.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="techlibs\xilinx\synth_xilinx.cc">
+      <Filter>源文件\techlibs\xilinx</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\trace.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\torder.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\tee.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\trees.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\uncompr.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\verilog\verilog_parser.tab.cc">
+      <Filter>源文件\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="frontends\verilog\verilog_lexer.cc">
+      <Filter>源文件\frontends\verilog</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\write_file.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\viz.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="passes\cmds\xprop.cc">
+      <Filter>源文件\passes\cmds</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\yw.cc">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zlib\zutil.c">
+      <Filter>源文件\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\dlfcn-win32\dlfcn.cc">
+      <Filter>源文件\libs\dlfcn-win32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kernel\celltypes.h">
@@ -601,6 +868,90 @@
     </ClInclude>
     <ClInclude Include="libs\subcircuit\subcircuit.h">
       <Filter>头文件\libs\subcircuit</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\bitpattern.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\celledges.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\fst\config.h">
+      <Filter>头文件\libs\fst</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\crc32.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\deflate.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\fst\fastlz.h">
+      <Filter>头文件\libs\fst</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\ffmerge.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\fst\fstapi.h">
+      <Filter>头文件\libs\fst</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\fstdata.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\gzguts.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\inffast.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\inffixed.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\inflate.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\inftrees.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\json.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\fst\lz4.h">
+      <Filter>头文件\libs\fst</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\mem.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\qcsat.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="frontends\rtlil\rtlil_parser.tab.hh">
+      <Filter>头文件\frontends\rtlil</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\scopeinfo.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\trees.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\yosys_common.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel\yw.h">
+      <Filter>头文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\zconf.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\zutil.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\zlib.h">
+      <Filter>头文件\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\dlfcn-win32\dlfcn.h">
+      <Filter>头文件\libs\dlfcn-win32</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zlib\abc_namespaces.h">
+      <Filter>头文件\libs\zlib</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

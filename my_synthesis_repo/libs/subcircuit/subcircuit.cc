@@ -34,6 +34,30 @@
 
 using namespace SubCircuit;
 
+// Windows 兼容的 vasprintf 实现
+int vasprintf(char** strp, const char* fmt, va_list ap) {
+	// 使用 _vscprintf 计算格式化字符串的长度（不包括终止符）
+	int size = _vscprintf(fmt, ap);
+	if (size < 0) {
+		return -1; // 格式化错误
+	}
+
+	// 分配足够的内存（包括 '\0' 终止符）
+	*strp = (char*)malloc(size + 1);
+	if (!*strp) {
+		return -1; // 内存分配失败
+	}
+
+	// 重新格式化字符串并存入分配的缓冲区
+	int result = vsnprintf(*strp, size + 1, fmt, ap);
+	if (result < 0) {
+		free(*strp); // 避免内存泄漏
+		*strp = nullptr;
+	}
+
+	return result;
+}
+
 #ifndef _YOSYS_
 static std::string my_stringf(const char *fmt, ...)
 {
@@ -56,6 +80,7 @@ static std::string my_stringf(const char *fmt, ...)
 #else
 #  define my_stringf YOSYS_NAMESPACE_PREFIX stringf
 #endif
+
 
 SubCircuit::Graph::Graph(const Graph &other, const std::vector<std::string> &otherNodes)
 {

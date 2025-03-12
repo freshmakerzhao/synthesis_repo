@@ -1,7 +1,24 @@
 #include "subcircuit.h"
 #include <stdio.h>
-
+#include <stdint.h>
 #define VERBOSE
+
+// 使用一个64位变量存储48位状态（仅低48位有效）
+static unsigned long long l48_state = 0;
+
+// srand48：以 seedval 作为种子初始化生成器。
+// 根据标准算法，初始状态为：(seed << 16) | 0x330E
+void srand48(long seedval) {
+	l48_state = (((unsigned long long) seedval) << 16) | 0x330EULL;
+}
+
+// lrand48：生成下一个随机数。
+// 算法： X(n+1) = (a * X(n) + c) mod 2^48
+// 其中 a = 0x5DEECE66D, c = 0xB，返回值为状态的高31位。
+long lrand48(void) {
+	l48_state = (l48_state * 0x5DEECE66DULL + 0xBULL) & ((1ULL << 48) - 1);
+	return (long)(l48_state >> 17);
+}
 
 int main()
 {

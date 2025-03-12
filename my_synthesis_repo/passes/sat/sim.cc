@@ -2096,7 +2096,7 @@ struct SimWorker : SimShared
 #else
 		json.entry("version", "Yosys sim summary");
 #endif // HYBRDLINK
-		json.entry("generator", yosys_version_str);
+		// json.entry("generator", yosys_version_str);
 		json.entry("steps", step);
 		json.entry("top", log_id(top->module->name));
 		json.name("assertions");
@@ -2359,9 +2359,11 @@ struct VCDWriter : public OutputWriter
 	{
 		if (!vcdfile.is_open()) return;
 #ifdef HYBRDLINK
-		vcdfile << stringf("$version %s $end\n", worker->date ? yosys_version_str : "Synthesizer");
+		// vcdfile << stringf("$version %s $end\n", worker->date ? yosys_version_str : "Synthesizer");
+		vcdfile << stringf("$version %s $end\n", worker->date ? "zs yosys 0.0.1" : "Synthesizer");
 #else
-		vcdfile << stringf("$version %s $end\n", worker->date ? yosys_version_str : "Yosys");
+		// vcdfile << stringf("$version %s $end\n", worker->date ? yosys_version_str : "Yosys");
+		vcdfile << stringf("$version %s $end\n", worker->date ? "zs yosys 0.0.1" : "Yosys");
 #endif // HYBRDLINK
 
 		if (worker->date) {
@@ -2433,9 +2435,11 @@ struct FSTWriter : public OutputWriter
 		if (!fstfile) return;
 		std::time_t t = std::time(nullptr);
 #ifdef HYBRDLINK
-		fstWriterSetVersion(fstfile, worker->date ? yosys_version_str : "Synthesizer");
+		// fstWriterSetVersion(fstfile, worker->date ? yosys_version_str : "Synthesizer");
+		fstWriterSetVersion(fstfile, worker->date ? "zs yosys 0.0.1" : "Synthesizer");
 #else
-		fstWriterSetVersion(fstfile, worker->date ? yosys_version_str : "Yosys");
+		// fstWriterSetVersion(fstfile, worker->date ? yosys_version_str : "Yosys");
+		fstWriterSetVersion(fstfile, worker->date ? "zs yosys 0.0.1" : "Yosys");
 #endif //HYBRDLINK
 		if (worker->date)
 			fstWriterSetDate(fstfile, asctime(std::localtime(&t)));

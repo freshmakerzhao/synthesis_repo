@@ -440,7 +440,7 @@ int main(int argc, char **argv)
 
 	if (argc == 2 && (!strcmp(argv[1], "-V") || !strcmp(argv[1], "-version") || !strcmp(argv[1], "--version")))
 	{
-		printf("%s\n", yosys_version_str);
+		// printf("%s\n", yosys_version_str);
 		exit(0);
 	}
 
@@ -482,7 +482,7 @@ int main(int argc, char **argv)
 			print_stats = false;
 			break;
 		case 'V':
-			printf("%s\n", yosys_version_str);
+			// printf("%s\n", yosys_version_str);
 			exit(0);
 		case 'S':
 			passes_commands.push_back("synth");
@@ -821,12 +821,12 @@ int main(int argc, char **argv)
 				stats_divider.c_str(), ru_buffer.ru_utime.tv_sec + 1e-6 * ru_buffer.ru_utime.tv_usec,
 				ru_buffer.ru_stime.tv_sec + 1e-6 * ru_buffer.ru_stime.tv_usec, meminfo.c_str());
 #endif
-		log("%s\n", yosys_version_str);
+		// log("%s\n", yosys_version_str);
 		// 返回成功信息
 		nlohmann::json data_info;
 		data_info["pipe_type"] = PipeTypeToString(PipeType::DATA);
 		data_info["level_code"] = static_cast<int>(LevelCode::INFO_LOG);
-		data_info["message_content"] = yosys_version_str;
+		// data_info["message_content"] = yosys_version_str;
 		data_info["category"] = "";
 		data_info["task_info"] = "ENDING SYNTHESIS TASK!!!";
 		nlohmann::json data = Common::CreateDataJson(StatusCode::SUCCESS,data_info,"ENDING SYNTHESIS TASK!!!");
@@ -872,7 +872,7 @@ int main(int argc, char **argv)
 				log_error("Can't open performance log file for writing: %s\n", strerror(errno));
 
 			fprintf(f, "{\n");
-			fprintf(f, "  \"generator\": \"%s\",\n", yosys_version_str);
+			// fprintf(f, "  \"generator\": \"%s\",\n", yosys_version_str);
 			fprintf(f, "  \"total_ns\": %" PRIu64 ",\n", total_ns);
 			fprintf(f, "  \"passes\": {");
 

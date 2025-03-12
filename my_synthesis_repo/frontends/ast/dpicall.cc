@@ -21,8 +21,9 @@
 
 #ifdef YOSYS_ENABLE_PLUGINS
 
-#include <dlfcn.h>
-#include <ffi.h>
+#include "libs/dlfcn-win32/dlfcn.h" // replace with dlfcn.h
+//#include <dlfcn.h>
+//#include <ffi.h>
 
 YOSYS_NAMESPACE_BEGIN
 

@@ -211,12 +211,14 @@ struct FlowGraph
 			if (node != source && node != sink)
 				label += stringf("\n%d/%d", flow, MAX_NODE_FLOW);
 			else
-				label += stringf("\n%d/∞", flow);
+				//label += stringf("\n%d/∞", flow); // 原版 不支持∞
+				label += stringf("\n%d/", flow);
 			return GraphStyle{label, flow < MAX_NODE_FLOW ? "green" : "black"};
 		};
 		auto edge_style = [&](RTLIL::SigBit source, RTLIL::SigBit sink) {
 			int flow = edge_flow[{source, sink}];
-			return GraphStyle{stringf("%d/∞", flow), flow > 0 ? "blue" : "black"};
+			//return GraphStyle{stringf("%d/∞", flow), flow > 0 ? "blue" : "black"};
+			return GraphStyle{ stringf("%d/", flow), flow > 0 ? "blue" : "black" };
 		};
 		::dump_dot_graph(filename, nodes, edges_fw, {source}, {sink}, node_style, edge_style);
 	}

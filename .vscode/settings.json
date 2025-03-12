@@ -60,6 +60,10 @@
         "ratio": "cpp",
         "set": "cpp",
         "string": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "cinttypes": "cpp",
+        "csignal": "cpp",
+        "abc_global.h": "c",
+        "string.h": "c"
     }
 }

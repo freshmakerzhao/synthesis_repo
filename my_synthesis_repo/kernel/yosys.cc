@@ -1103,12 +1103,15 @@ void init_abc_executable_name()
 	}
 #else
 	// YOSYS_ABC_EXE_NAME is yosys-abc executable file name, from Makefile
-	yosys_abc_executable = proc_self_dirname() + proc_program_prefix()+ YOSYS_ABC_EXE_NAME;
+	//yosys_abc_executable = proc_self_dirname() + proc_program_prefix()+ YOSYS_ABC_EXE_NAME;
+	yosys_abc_executable = proc_self_dirname() + proc_program_prefix() + "yosys-abc";
 #endif
 #ifdef _WIN32
 #ifndef ABCEXTERNAL
-	if (!check_file_exists(yosys_abc_executable + ".exe") && check_file_exists(proc_self_dirname() + "..\\" + proc_program_prefix() + YOSYS_ABC_EXE_NAME + ".exe"))
-		yosys_abc_executable = proc_self_dirname() + "..\\" + proc_program_prefix() + YOSYS_ABC_EXE_NAME;
+	//if (!check_file_exists(yosys_abc_executable + ".exe") && check_file_exists(proc_self_dirname() + "..\\" + proc_program_prefix() + YOSYS_ABC_EXE_NAME + ".exe"))
+	//	yosys_abc_executable = proc_self_dirname() + "..\\" + proc_program_prefix() + YOSYS_ABC_EXE_NAME;
+	if (!check_file_exists(yosys_abc_executable + ".exe") && check_file_exists(proc_self_dirname() + "..\\" + proc_program_prefix() + "yosys-abc" + ".exe"))
+		yosys_abc_executable = proc_self_dirname() + "..\\" + proc_program_prefix() + "yosys-abc";
 #endif
 #endif
 }
